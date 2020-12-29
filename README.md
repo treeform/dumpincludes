@@ -1,6 +1,8 @@
 # See where your exe size comes from.
 
-Some times its surprising where most of the code in your exe comes from. Simply use this tool to list out where:
+Sometimes it is surprising where most of the code in your exe comes from. Simply use this tool to list out where:
+
+Build this project by running `nimble install` in the repo directory.
 
 Compile your program with `--debugger:native`
 
