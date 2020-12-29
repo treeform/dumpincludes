@@ -5,5 +5,7 @@ license     = "MIT"
 
 srcDir = "src"
 
-requires "nim >= 1.2.2"
 bin = @["dumpincludes"]
+
+requires "nim >= 1.2.2"
+requires "cligen >= 1.3.2"

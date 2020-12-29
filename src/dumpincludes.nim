@@ -1,16 +1,13 @@
 import osproc, strutils, tables, os, cligen
 
-var objDumpPath = "objdump"
+const objDumpPath = "objdump"
 
 proc dots(n: int): string =
   for i in 0 ..< n:
     result.add(".")
 
 proc main(file: string) =
-
-  let (sectionsOutput, code1) = execCmdEx(
-    objDumpPath & " -h " & file
-  )
+  let (sectionsOutput, _) = execCmdEx(objDumpPath & " -h " & file)
 
   var
     textSize = 0
@@ -26,9 +23,7 @@ proc main(file: string) =
       else:
         dataSize += parseHexInt(arr[2])
 
-  let (output, code2) = execCmdEx(
-     objDumpPath & " -dl " & file
-  )
+  let (output, _) = execCmdEx(objDumpPath & " -dl " & file)
 
   #writeFile("output.txt", output)
   #let output = readFile("output.txt")
