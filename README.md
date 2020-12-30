@@ -16,7 +16,7 @@ Get this tool by running `nimble install dumpincludes`.
 Compile your program with `--debugger:native` to get debugging symbols:
 
 ```sh
-nim c --debugger:native .\tests\helloword.nim
+nim c --debugger:native tests/helloworld.nim
 ```
 
 ```sh

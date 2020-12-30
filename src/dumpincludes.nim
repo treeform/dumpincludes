@@ -20,6 +20,9 @@ proc fmti(n: int, align = 0): string =
   result.add(s2)
 
 proc main(file: string) =
+  if not fileExists(file):
+    raise newException(ValueError, "File " & file & " does not exist")
+
   let (sectionsOutput, _) = execCmdEx(objDumpPath & " -h " & file)
 
   var
