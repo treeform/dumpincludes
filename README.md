@@ -3,12 +3,13 @@
 Sometimes it's surprising where most of the code in your executable comes from.
 Simply use this tool to list out which module contributes how many bytes.
 
-Nim and the c compiler strips out much of unused code in modules, so its hard to guess just from module line count on how big of a contributor it is. You might think this module is huge, but in really you only use one function and most of it gets compiled out.
-While on the other hand, in Nim you can also use macros, templates and generics to generate a lot of code. Some times the number of permutations can generate code that is very large. You might think its a little 5 line template, but it calls itself recursively creating megabytes of code.
-And some times module imports other modules and they imports other modules, so you just don't know what really ends up compiled in.
+Nim and the C compiler strips out much of unused code in modules, so its hard to guess just from module line count on how big of a contributor it is. You might think this module is huge, but in really you only use one function and most of it gets compiled out.
 
-This tool lets you see whats in your executable.
+On the other hand, in Nim you can also use macros, templates and generics to generate a lot of code. Sometimes the number of permutations can generate code that is very large. You might think its a little 5 line template, but it calls itself recursively creating megabytes of code.
 
+And sometimes modules import other modules and they imports other modules, so you just don't know what really ends up getting compiled in.
+
+This tool lets you see exactly whats in your executable.
 
 Get this tool by running `nimble install dumpincludes`.
 
