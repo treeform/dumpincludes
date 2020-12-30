@@ -1,10 +1,23 @@
-import osproc, strutils, tables, os, cligen
+import osproc, strutils, tables, os, cligen, strformat
 
 const objDumpPath = "objdump"
 
 proc dots(n: int): string =
   for i in 0 ..< n:
     result.add(".")
+
+proc fmti(n: int, align = 0): string =
+  let s = $n
+  var s2 = ""
+  for i, c in s:
+    if i != 0 and (s.len - i) mod 3 == 0:
+      s2.add ','
+    s2.add(c)
+  while (result.len + s2.len + 1) < align:
+    result.add(".")
+  if (result.len + s2.len) < align:
+    result.add(" ")
+  result.add(s2)
 
 proc main(file: string) =
   let (sectionsOutput, _) = execCmdEx(objDumpPath & " -h " & file)
@@ -40,7 +53,11 @@ proc main(file: string) =
     if not line.startsWith("  "):
       if path.len > 0:
         let bytes = endAddr - startAddr
-        let moduleName = path.rsplit(":", 1)[0].lastPathPart
+        var path = path.rsplit(":", 1)[0]
+        #for std
+        #if "lib/system" in path:
+        #  path = path[path.find("lib/system") .. ^1]
+        let moduleName = path #.lastPathPart
         if moduleName.splitFile().ext.len > 0 and not moduleName.endsWith(")") and not moduleName.endsWith(">"):
           moduleCounts.inc(moduleName, bytes)
       path = ""
@@ -57,18 +74,25 @@ proc main(file: string) =
       except ValueError:
         discard
 
+  var w = 40
+  for moduleName, bytes in moduleCounts.pairs:
+    w = max(w, moduleName.len + 1)
+
+  echo "Sections:"
+  echo &"  code {fmti(textSize, w+8-4)} bytes"
+  echo &"  data {fmti(dataSize, w+8-4)} bytes"
+  echo &"  debug {fmti(debugSize, w+8-5)} bytes"
+
+  echo "Imports:"
   moduleCounts.sort()
   var accountedFor = 0
   for moduleName, bytes in moduleCounts.pairs:
-    echo moduleName, " ", dots(40 - moduleName.len), " ", align($bytes, 8), " bytes"
+    echo &"  {moduleName} {fmti(bytes, w+8-moduleName.len)} bytes"
     accountedFor += bytes
 
-  echo "other ", dots(40 - 5), " ", align($(textSize - accountedFor), 8), " bytes"
+  echo &"  other {fmti(textSize - accountedFor, w+8-5)} bytes"
 
-  echo "sections:"
-  echo "code ", dots(40 - 4), " ", align($textSize, 8), " bytes"
-  echo "data ", dots(40 - 4), " ", align($dataSize, 8), " bytes"
-  echo "debug ", dots(40 - 5), " ", align($debugSize, 8), " bytes"
+
 
   if moduleCounts.len == 0:
     echo "Was ", file, " compiled with --debugger:native?"

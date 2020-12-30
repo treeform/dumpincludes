@@ -15,39 +15,40 @@ dumpincludes -f:helloworld.exe
 ```
 
 ```
-excpt.nim ...............................    17403 bytes
-alloc.nim ...............................    10630 bytes
-gc.nim ..................................     6753 bytes
-arithmetics.nim .........................     4067 bytes
-cellseqs_v1.nim .........................     2605 bytes
-comparisons.nim .........................     1960 bytes
-cellsets.nim ............................     1592 bytes
-avltree.nim .............................     1383 bytes
-sysstr.nim ..............................     1372 bytes
-gc_common.nim ...........................      941 bytes
-io.nim ..................................      846 bytes
-strmantle.nim ...........................      814 bytes
-osalloc.nim .............................      806 bytes
-memory.nim ..............................      775 bytes
-system.nim ..............................      568 bytes
-fatal.nim ...............................      479 bytes
-dyncalls.nim ............................      346 bytes
-miscdollars.nim .........................      247 bytes
-iterators_1.nim .........................      166 bytes
-mmdisp.nim ..............................      138 bytes
-indexerrors.nim .........................       95 bytes
-chcks.nim ...............................       68 bytes
-ansi_c.nim ..............................       65 bytes
-iterators.nim ...........................       50 bytes
-helloword.nim ...........................       37 bytes
-atomics.nim .............................       35 bytes
-memalloc.nim ............................        9 bytes
-integerops.nim ..........................        2 bytes
-other ...................................    33388 bytes
-sections:
-code ....................................    87640 bytes
-data ....................................    87920 bytes
-debug ...................................  1400641 bytes
+Sections:
+  code .......................................................................... 87,640 bytes
+  data .......................................................................... 87,920 bytes
+  debug ...................................................................... 1,400,641 bytes
+Imports:
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/excpt.nim ............. 17,403 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/alloc.nim ............. 10,630 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/gc.nim ................. 6,753 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/arithmetics.nim ........ 4,067 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/cellseqs_v1.nim ........ 2,605 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/comparisons.nim ........ 1,960 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/cellsets.nim ........... 1,592 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/avltree.nim ............ 1,383 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/sysstr.nim ............. 1,372 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/gc_common.nim ............ 941 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/io.nim ................... 846 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/strmantle.nim ............ 814 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/osalloc.nim .............. 806 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/memory.nim ............... 775 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system.nim ...................... 568 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/fatal.nim ................ 479 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/dyncalls.nim ............. 346 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/std/private/miscdollars.nim ..... 247 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/iterators_1.nim .......... 166 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/mmdisp.nim ............... 138 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/indexerrors.nim ........... 95 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/chcks.nim ................. 68 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/ansi_c.nim ................ 65 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/iterators.nim ............. 50 bytes
+  C:/p/dumpincludes/tests/helloword.nim ............................................. 37 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/atomics.nim ............... 35 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/memalloc.nim ............... 9 bytes
+  C:/Users/me/.choosenim/toolchains/nim-#devel/lib/system/integerops.nim ............. 2 bytes
+  other ......................................................................... 33,388 byte
 ```
 
 Also works when linking with `.c`, `.cpp`, or using `.h` imports!
