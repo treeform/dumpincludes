@@ -2,6 +2,12 @@
 
 `nimble install dumpincludes`
 
+![Github Actions](https://github.com/treeform/dumpincludes/workflows/Github%20Actions/badge.svg)
+
+[API reference](https://nimdocs.com/treeform/dumpincludes)
+
+## About
+
 Sometimes it's surprising where most of the code in your executable comes from.
 Simply use this tool to list out which module contributes how many bytes.
 

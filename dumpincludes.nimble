@@ -1,5 +1,5 @@
 version     = "0.0.1"
-author      = "treeform"
+author      = "Andre von Houck"
 description = "See where your exe size comes from."
 license     = "MIT"
 
