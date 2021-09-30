@@ -1,5 +1,7 @@
 # DumpIncludes - See where your exe size comes from.
 
+`nimble install dumpincludes`
+
 Sometimes it's surprising where most of the code in your executable comes from.
 Simply use this tool to list out which module contributes how many bytes.
 
