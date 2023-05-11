@@ -4,7 +4,7 @@
 
 ![Github Actions](https://github.com/treeform/dumpincludes/workflows/Github%20Actions/badge.svg)
 
-[API reference](https://nimdocs.com/treeform/dumpincludes)
+[API reference](https://treeform.github.io/dumpincludes)
 
 ## About
 
